@@ -111,9 +111,9 @@ class UpdateRoom(APIView):
             self.request.session.create()
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            guest_can_pause = serializer.data('guest_can_pause')
-            votes_to_skip = serializer.data('votes_to_skip')
-            code = serializer.data('code')
+            guest_can_pause = serializer.data.get('guest_can_pause')
+            votes_to_skip = serializer.data.get('votes_to_skip')
+            code = serializer.data.get('code')
 
             queryset = Room.objects.filter(code=code)
             if not queryset.exists():
