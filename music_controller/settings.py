@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'api.apps.ApiConfig',
     'frontend.apps.FrontendConfig',
     'rest_framework',
+    'spotify.apps.SpotifyConfig',
+
+
 ]
 
 MIDDLEWARE = [
